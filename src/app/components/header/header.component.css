@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #2f75ea;
+    height: 12vh;
+    padding: 0 20px;
+  }
+  
+.fa-circle-user {
+  color: white;
+  font-size: 45px;
+  margin-top: 10px;
+}
+
+.header-right img {
+  width: 45px;
+  height: 45px;
+  margin-top: 10px;
+}
+
+/* .header-left
+.header-right {
+  margin-top: 10px;
+} */

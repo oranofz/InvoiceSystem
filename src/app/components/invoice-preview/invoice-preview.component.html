@@ -1,0 +1,20 @@
+<div class="pdf-preview-container">
+  <div class="view-container">
+    <pdf-viewer 
+    [src]="pdf.url" 
+    [render-text]="true" 
+    [show-all]="true" 
+    [autoresize]="true" 
+    [original-size]="false"
+    [zoom]="0.8"
+    [stick-to-page]="true"
+    [external-link-target]="'blank'"
+    style="width: 90%; height: 98%;">
+  </pdf-viewer>
+  </div>
+  <div class="pagination">
+    <span *ngFor="let dot of pdf.pages; let i = index" 
+          [class.active]="i === 0" (click)="goToPage(i)">
+    </span>
+  </div>
+</div>

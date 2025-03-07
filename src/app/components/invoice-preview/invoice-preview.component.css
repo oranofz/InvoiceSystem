@@ -1,0 +1,53 @@
+/* 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination span {
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+  background: gray;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pagination span.active {
+  background: black;
+} */
+
+.pdf-preview-container {
+  background: white;
+  transition: width 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.view-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+}
+
+/* Pagination for preview */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination span {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: gray;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pagination span.active {
+  background: black;
+}

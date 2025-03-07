@@ -1,0 +1,60 @@
+/* .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  } */
+
+  .toolbar {
+    position: absolute; /* or 'fixed' if you want it to stay in the same place on the screen */
+    top: 6vh; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0); /* Adjust color as needed */
+    width: 90%;
+    padding: 10px; /* Adjust padding as needed */
+    z-index: 1000; /* Ensure the toolbar is on top */
+  }
+  
+  .toolbar-section {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left: View Toggle */
+  .toggle {
+    width: 50px;
+    justify-content: center;
+  }
+  
+  /* Middle: Filters */
+  .filters {
+    flex-grow: 1;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Right: Summary */
+  .summary {
+    width: 200px;
+  }
+  
+  .toggle-btn {
+    width: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  svg {
+    transition: transform 0.2s ease-in-out;
+  }
+  

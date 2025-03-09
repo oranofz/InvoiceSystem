@@ -1,0 +1,55 @@
+<div class="container"> 
+
+    <button mat-icon-button class="filter-btn" (click)="applySearchFilter()">
+        <i class="fa-solid fa-filter"></i>
+    </button>
+    <mat-form-field  dir="rtl" appearance="outline" class="form-field search">
+        <input matInput [(ngModel)]="searchText" (keyup.enter)="applySearchFilter()" placeholder="חפש...">
+        <button mat-icon-button matSuffix (click)="applySearchFilter()">
+          <mat-icon>search</mat-icon>
+          <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+        </button>
+    </mat-form-field>
+    <!-- <mat-form-field appearance="outline" class="input-field">
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date">
+        <input matEndDate placeholder="End date">
+      </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field> -->
+      <mat-form-field appearance="outline" class="form-field date">
+        <mat-date-range-input [rangePicker]="picker" >
+          <input matStartDate placeholder="תאריך התחלה" [(ngModel)]="dateRangeStart" ngDefaultControl>
+          <input matEndDate placeholder="תאריך סיום" [(ngModel)]="dateRangeEnd" ngDefaultControl>
+        </mat-date-range-input>
+        <mat-label class="date-label">טווח תאריכים</mat-label>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+</div>
+
+<!-- 
+
+<div class="container">
+    <button class="filter-btn" (click)="onFilterClick()">
+      <i class="fa-solid fa-filter"></i>
+    </button>
+  
+    <mat-form-field class="input-field no-label" dir="rtl">
+      <input matInput [(ngModel)]="searchText" (keyup.enter)="onSearch()" placeholder="חיפוש...">
+      <button mat-icon-button matSuffix (click)="onSearch()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </mat-form-field>
+  
+    <mat-form-field class="input-field no-label" dir="rtl">
+      <mat-date-range-input [rangePicker]="picker" [(ngModel)]="dateRange">
+        <input matStartDate placeholder="תאריך התחלה" [(ngModel)]="dateRange.start">
+        <input matEndDate placeholder="תאריך סיום" [(ngModel)]="dateRange.end">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+   -->

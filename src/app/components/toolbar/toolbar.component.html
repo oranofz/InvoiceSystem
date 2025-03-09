@@ -1,34 +1,22 @@
 <div class="toolbar">
     <!-- Left Section: View Toggle -->
-    <div class="toolbar-section toggle">
+    <div class="toggle-section">
       <!-- <button class="toggle-btn" (click)="toggleViewMode()">
         <img src="assets/toggle-icon.svg" alt="Toggle View" />
       </button> -->
-      <button mat-icon-button class="toggle-btn" (click)="toggleViewMode()">
-        <svg width="24" height="32" viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
-          <!-- Preview (Top Part) -->
-          <rect x="4" y="4" width="16" height="10" fill="white" stroke="black" stroke-width="2" rx="2"/>
-          <circle cx="16" cy="8" r="1.5" fill="black"/>
-          <circle cx="16" cy="11" r="1.5" fill="black"/>
-          <circle cx="16" cy="14" r="1.5" fill="black"/>
-          
-          <!-- List (Bottom Part) -->
-          <rect x="4" y="18" width="16" height="10" fill="white" stroke="black" stroke-width="2" rx="2"/>
-          <line x1="6" y1="22" x2="14" y2="22" stroke="black" stroke-width="2"/>
-          <line x1="6" y1="26" x2="14" y2="26" stroke="black" stroke-width="2"/>
-        </svg>
+      <button class="toggle-btn" (click)="toggleViewMode()">
+        <div class="icon-stack">
+          <div class="icon-wrapper top" [class.active]="isPreviewMode">
+            <mat-icon>chrome_reader_mode</mat-icon>
+          </div>
+          <div class="icon-wrapper bottom" [class.active]="!isPreviewMode">
+            <mat-icon>view_list</mat-icon>
+          </div>
+        </div>
       </button>
-      
     </div>
-  
-    <!-- Middle Section: Filters -->
-    <div class="toolbar-section filters">
-      <button class="filter-btn">🔍</button>
-      <input type="text" placeholder="חפש..." />
-      <input type="date" />
-    </div>
-  
+    <app-filter (filterValueChange)="handleFilterValueChange($event)"></app-filter>
     <!-- Right Section: Summary -->
-    <app-invoice-status></app-invoice-status>
+    <app-invoice-status (statusSelected)="handleInvoiceStatusSelected($event)"></app-invoice-status>
   </div>
   

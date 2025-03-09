@@ -1,19 +1,19 @@
 <div class="pdf-preview-container">
   <div class="view-container">
     <pdf-viewer 
-    [src]="pdf.url" 
+    [src]="invoiceItem.url" 
     [render-text]="true" 
     [show-all]="true" 
     [autoresize]="true" 
     [original-size]="false"
-    [zoom]="0.8"
+    [zoom]="0.75"
     [stick-to-page]="true"
     [external-link-target]="'blank'"
-    style="width: 90%; height: 98%;">
+    style="width: 90%; height: 99%;">
   </pdf-viewer>
   </div>
   <div class="pagination">
-    <span *ngFor="let dot of pdf.pages; let i = index" 
+    <span *ngFor="let dot of invoiceItem.pages; let i = index" 
           [class.active]="i === 0" (click)="goToPage(i)">
     </span>
   </div>

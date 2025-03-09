@@ -1,12 +1,13 @@
-<div class="pdf-item" [class.selected]="isSelected" [class.preview-mode]="isPreviewMode">
-    <span class="column number">
-      <img src="assets/hourglass-icon.png" alt="Hourglass">
-      <span>2/5</span>
-    </span>
-    <span class="column uploader">{{ pdf.uploader }}</span>
-    <span class="column name">{{ pdf.name }}</span>
+<div class="invoice-item" [class.selected]="isSelected" [class.preview-mode]="isPreviewMode">
+    <i class="fa-solid fa-chevron-left"></i>
+    <span class="column" dir="rtl">{{ invoice.cost}} ש"ח</span>
+    <span class="column">{{ invoice.supplier }}</span>
+    <div class="column">
+      <span (click)="navigateToInvoicePage()">{{ invoice.name }}</span><br>
+      <span class="invoice-date">{{ invoice.date | date:'dd/MM/yyyy'}}</span>
+    </div>
   
     <!-- Circle Symbol (Far Left) -->
-    <span class="column circle"><i class="fa-regular fa-circle"></i></span>
+    <span class="column-circle"><i class="fa-regular fa-circle"></i></span>
   </div>
   

@@ -1,21 +1,21 @@
-<app-toolbar (toggleView)="toggleViewMode($event)"></app-toolbar>
+<app-toolbar (toggleView)="toggleViewMode($event)"
+ (filterValueChange)="applySearchFilter($event)"
+ (invoiceStatusSelected)="applyInvoiceStatusDisplay($event)"></app-toolbar>
 
-
-
-<div class="pdf-list-container">
+<div class="invoice-list-container">
   
-  <div class="preview-container" *ngIf="isPreviewMode && selectedPdf">
-    <app-invoice-preview [pdf]="selectedPdf"></app-invoice-preview>
+  <div class="preview-container" *ngIf="isPreviewMode && selectedInvoice">
+    <app-invoice-preview [invoiceItem]="selectedInvoice"></app-invoice-preview>
   </div>
-  <div class="list" [class.preview-active]="isPreviewMode && selectedPdf">
+  <div class="list" [class.preview-active]="isPreviewMode && selectedInvoice">
     <div class="list-header">
-      <span>עלות</span>
-      <span>ספק</span>
-      <span>תיאור תעודה</span>
-      <span><i class="fa-regular fa-circle"></i></span>
+      <span class="column">עלות</span>
+      <span class="column">ספק</span>
+      <span class="column">תיאור תעודה</span>
+      <span class="column-circle"><i class="fa-regular fa-circle"></i></span>
     </div>
-    <div *ngFor="let pdf of pdfItems" (click)="selectPdf(pdf)">
-      <app-invoice-item [pdf]="pdf" [isSelected]="selectedPdf?.id === pdf.id" [isPreviewMode]="isPreviewMode"></app-invoice-item> 
+    <div *ngFor="let invoiceItem of filteredInvoiceItems" (click)="selectInvoice(invoiceItem)">
+      <app-invoice-item [invoice]="invoiceItem" [isSelected]="invoiceItem?.id === selectedInvoice?.id" [isPreviewMode]="isPreviewMode"></app-invoice-item> 
     </div>
   </div>
 </div>

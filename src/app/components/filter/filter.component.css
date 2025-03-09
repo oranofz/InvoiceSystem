@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+    width: 50vw;
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background:#FFFEFF;
+    margin-right:5vw;
+  }
+  .filter-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .search-field {
+    width: 200px;
+    position: relative;
+  
+    input {
+      padding-right: 30px;
+    }
+  
+    button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  
+  .form-field.date {
+    width: 15vw;
+  }
+
+  .form-field.search {
+    width: 20vw;
+  }
+
+  .form-field {
+    margin-top: 20px;
+  }
+
+  .date-label {
+    padding-inline-start: 6vw;
+  }
+  
+  .specific-container .mat-icon {
+    background-color: transparent !important;
+  }
+  

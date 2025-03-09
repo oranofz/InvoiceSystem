@@ -1,60 +1,61 @@
-/* .toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  } */
-
-  .toolbar {
-    position: absolute; /* or 'fixed' if you want it to stay in the same place on the screen */
-    top: 6vh; /* Adjust as needed */
-    left: 0; /* Adjust as needed */
-    background-color: rgba(0, 0, 0, 0); /* Adjust color as needed */
-    width: 90%;
-    padding: 10px; /* Adjust padding as needed */
-    z-index: 1000; /* Ensure the toolbar is on top */
+  .toggle-btn {
+    all: unset;
+    border: none;
+    height: 12vh;
+    display: inline-flex;
+    background: #E5E9F2;
+    border-radius: 6px;
   }
   
-  .toolbar-section {
+  .toggle-section {
     display: flex;
     align-items: center;
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
   }
   
-  /* Left: View Toggle */
   .toggle {
     width: 50px;
     justify-content: center;
   }
   
-  /* Middle: Filters */
   .filters {
     flex-grow: 1;
     justify-content: center;
     gap: 10px;
   }
   
-  /* Right: Summary */
   .summary {
     width: 200px;
   }
   
-  .toggle-btn {
-    width: 40px;
-    height: 50px;
+
+  .icon-stack {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
+    flex-direction: column;
+    width: fit-content; 
+    justify-content: space-between;
   }
-  svg {
-    transition: transform 0.2s ease-in-out;
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5vh 1vh; 
+    width: 100%; 
+    height: 100%; 
+    overflow:hidden;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    opacity: 0.5;
   }
   
+  .icon-wrapper.active {
+    background-color: white; 
+    opacity: 1;
+  }
+  
+  .icon-wrapper.active mat-icon {
+    color: black;
+  }

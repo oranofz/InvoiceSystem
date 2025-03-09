@@ -1,19 +1,27 @@
 <div class="container">
-    <div class="button">
-      <span>8</span>
+    <div class="button"
+    [class.selected]="selectedStatus === 4"
+    (click)="selectStatus(4)">
+      <span class="invoice-count" >{{invoiceList?.length}}</span>
       <span class="label">הכל</span>
     </div>
-    <div class="button">
-      <span>8</span>
+    <div class="button"
+    [class.selected]="selectedStatus === 3"
+    (click)="selectStatus(3)">
+      <span class="invoice-count">{{statusesCounts[3]}}</span>
       <span class="label">נדחו</span>
     </div>
-    <div class="button">
-      <span>8</span>
+    <div class="button"
+    [class.selected]="selectedStatus === 2"
+    (click)="selectStatus(2)">
+      <span class="invoice-count">{{statusesCounts[2]}}</span>
       <span class="label">בתהליך</span>
     </div>
-    <div class="button">
-      <span>8</span>
-      <span class="label">ממתינות לאישור</span>
+    <div class="button"
+    [class.selected]="selectedStatus === 1"
+    (click)="selectStatus(1)">
+      <span class="invoice-count">{{statusesCounts[1]}}</span>
+      <span class="label">ממתינות <br>לאישור</span>
     </div>
   </div>
   

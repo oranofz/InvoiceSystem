@@ -1,4 +1,4 @@
-.pdf-item {
+.invoice-item {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -7,52 +7,31 @@
     transition: background 0.3s;
   }
   
-  .pdf-item:hover {
+  .invoice-item:hover {
     background: #e6f0ff;
   }
   
-  .pdf-item.selected {
+  .invoice-item.selected {
     background: #3B73EE;
     color: white;
-
   }
 
-  .pdf-item.selected.preview-mode {
+  .invoice-item.selected.preview-mode {
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
     position: relative;
     z-index: 10;
-    margin-left: -40px; /* Moves it outside the container */
+    margin-left: -40px;
   }
 
-  .pdf-item.selected.preview-mode::before {
+  .invoice-item.selected.preview-mode::before {
     background-color: inherit;
     border-radius: inherit;
     color: white;
     position: absolute;
     left: -10px;
   }
-  
-  .column {
-    flex: 1;
-    text-align: right;
-    width: fit-content;
-  }
-  
-  .column.number {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    justify-content: center;
-  }
-  
-  .column.number img {
-    width: 16px;
-    height: 16px;
-  }
 
-  .column.circle {
-    width: fit-content;
+  .invoice-date {
+    font-size: 0.7rem;
   }
-  
-  

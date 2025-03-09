@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { PdfItem } from '../../models/pdf-item.model';
 import { CommonModule } from '@angular/common';
+import { Invoice } from '../../models/invoice.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-invoice-item',
@@ -10,7 +11,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './invoice-item.component.css'
 })
 export class InvoiceItemComponent {
-  @Input() pdf!: PdfItem;
+  @Input() invoice!: Invoice;
   @Input() isSelected = false;
   @Input() isPreviewMode = false;
+
+  constructor() {}
+
+  navigateToInvoicePage() {
+    window.location.href = this.invoice.url;
+  }
 }

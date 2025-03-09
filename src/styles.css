@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+.mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 14px !important;
+} 
+
+
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -10,69 +27,33 @@ body {
     width: 40px;
     height: 40px;
   }
-  
+  .column {
+    flex: 1;
+    text-align: right;
+    width: fit-content;
+  }
+
+  .column-circle {
+    flex: 0 0 35px; 
+    text-align: center;
+    width: fit-content;
+    padding-left: 10px;
+    font-size: 20px;
+  }
 
   .toolbar {
+    position: absolute; 
+    top: 9vh; 
+    background: rgba(0, 0, 0, 0); 
+    z-index: 20; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background: white;
-    margin: 10px;
-    border-radius: 8px;
+    left: 2.5%;
+    width: 95%;
   }
-  
-  .toolbar-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .search input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-
-  .summary {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .summary div {
-    text-align: center;
-    font-weight: bold;
-  }
-  
-
-  /* .pdf-list {
-    background: #f0f4f8;
-    margin: 10px;
-    border-radius: 5px;
-    padding: 10px;
-  } */
-  
-  /* .list-header {
-    display: flex;
-    background: #b0c4de;
-    padding: 10px;
-    font-weight: bold;
-  }
-   */
-  /* .list-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    background: white;
-  }
-  
-  .list-item .icon {
-    margin-right: 10px;
-  } */
 
   .fa-circle {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   

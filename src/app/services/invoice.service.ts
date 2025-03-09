@@ -1,37 +1,32 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { PdfItem } from '../models/pdf-item.model';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Invoice } from '../models/invoice.model';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class InvoiceService {
-  private mockData: PdfItem[] = [
-    {
-      id: 1,
-      name: 'Report Q1',
-      date: '2025-03-05',
-      uploader: 'John Doe',
-      status: 'approved',
-      numberField1: 42,
-      numberField2: 17,
-      pages: ['assets/pdf1-page1.png', 'assets/pdf1-page2.png'],
-      url: '/assets/pdf/oranCV.pdf'
-    },
-    {
-      id: 2,
-      name: 'Budget 2025',
-      date: '2025-02-20',
-      uploader: 'Alice Smith',
-      status: 'pending',
-      numberField1: 30,
-      numberField2: 10,
-      pages: ['assets/pdf2-page1.png'],
-      url: '/assets/pdf/oranCV.pdf'
-    },
-  ];
 
-  getPdfItems(): Observable<PdfItem[]> {
-    return of(this.mockData);
+  private invoiceListSubject = new BehaviorSubject<Invoice[]>([]);
+
+  get invoiceList$() {
+    return this.invoiceListSubject.asObservable();
+  }
+
+  private apiUrl: string;
+
+  constructor(private readonly httpClient: HttpClient) {
+    this.apiUrl = 'http://localhost:3000/invoice';
+  }
+  getInvoiceList(): Observable<Invoice[]> {
+    return this.httpClient.get<Invoice[]>(this.apiUrl);
+  }
+
+  setInvoiceList(invoiceList: Invoice[]): void {
+    this.invoiceListSubject.next(invoiceList);
   }
 }
+
+

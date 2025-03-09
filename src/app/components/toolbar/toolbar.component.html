@@ -1,0 +1,22 @@
+<div class="toolbar">
+    <!-- Left Section: View Toggle -->
+    <div class="toggle-section">
+      <!-- <button class="toggle-btn" (click)="toggleViewMode()">
+        <img src="assets/toggle-icon.svg" alt="Toggle View" />
+      </button> -->
+      <button class="toggle-btn" (click)="toggleViewMode()">
+        <div class="icon-stack">
+          <div class="icon-wrapper top" [class.active]="isPreviewMode">
+            <mat-icon>chrome_reader_mode</mat-icon>
+          </div>
+          <div class="icon-wrapper bottom" [class.active]="!isPreviewMode">
+            <mat-icon>view_list</mat-icon>
+          </div>
+        </div>
+      </button>
+    </div>
+    <app-filter (filterValueChange)="handleFilterValueChange($event)"></app-filter>
+    <!-- Right Section: Summary -->
+    <app-invoice-status (statusSelected)="handleInvoiceStatusSelected($event)"></app-invoice-status>
+  </div>
+  

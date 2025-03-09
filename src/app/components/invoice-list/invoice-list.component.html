@@ -1,0 +1,21 @@
+<app-toolbar (toggleView)="toggleViewMode($event)"
+ (filterValueChange)="applySearchFilter($event)"
+ (invoiceStatusSelected)="applyInvoiceStatusDisplay($event)"></app-toolbar>
+
+<div class="invoice-list-container">
+  
+  <div class="preview-container" *ngIf="isPreviewMode && selectedInvoice">
+    <app-invoice-preview [invoiceItem]="selectedInvoice"></app-invoice-preview>
+  </div>
+  <div class="list" [class.preview-active]="isPreviewMode && selectedInvoice">
+    <div class="list-header">
+      <span class="column">עלות</span>
+      <span class="column">ספק</span>
+      <span class="column">תיאור תעודה</span>
+      <span class="column-circle"><i class="fa-regular fa-circle"></i></span>
+    </div>
+    <div *ngFor="let invoiceItem of filteredInvoiceItems" (click)="selectInvoice(invoiceItem)">
+      <app-invoice-item [invoice]="invoiceItem" [isSelected]="invoiceItem?.id === selectedInvoice?.id" [isPreviewMode]="isPreviewMode"></app-invoice-item> 
+    </div>
+  </div>
+</div>

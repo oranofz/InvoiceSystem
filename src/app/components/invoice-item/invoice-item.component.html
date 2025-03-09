@@ -1,0 +1,13 @@
+<div class="invoice-item" [class.selected]="isSelected" [class.preview-mode]="isPreviewMode">
+    <i class="fa-solid fa-chevron-left"></i>
+    <span class="column" dir="rtl">{{ invoice.cost}} ש"ח</span>
+    <span class="column">{{ invoice.supplier }}</span>
+    <div class="column">
+      <span (click)="navigateToInvoicePage()">{{ invoice.name }}</span><br>
+      <span class="invoice-date">{{ invoice.date | date:'dd/MM/yyyy'}}</span>
+    </div>
+  
+    <!-- Circle Symbol (Far Left) -->
+    <span class="column-circle"><i class="fa-regular fa-circle"></i></span>
+  </div>
+  

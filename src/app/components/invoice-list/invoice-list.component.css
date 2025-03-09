@@ -1,0 +1,43 @@
+.list {
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+  background: #C5D5FA; 
+}
+
+.column {
+  flex: 1;
+  text-align: right;
+}
+
+.invoice-list-container {
+  display: flex;
+  width: 95%;
+  height: 70vh;
+  background: #E5E9F2; 
+  gap: 1%;
+  justify-content: center;
+  margin-top: 12vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list.preview-active {
+  width: 64%;
+}
+
+.preview-container {
+  width: 35%;
+  height: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}

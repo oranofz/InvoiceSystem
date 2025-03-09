@@ -1,0 +1,61 @@
+  .toggle-btn {
+    all: unset;
+    border: none;
+    height: 12vh;
+    display: inline-flex;
+    background: #E5E9F2;
+    border-radius: 6px;
+  }
+  
+  .toggle-section {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+  }
+  
+  .toggle {
+    width: 50px;
+    justify-content: center;
+  }
+  
+  .filters {
+    flex-grow: 1;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .summary {
+    width: 200px;
+  }
+  
+
+  .icon-stack {
+    display: flex;
+    flex-direction: column;
+    width: fit-content; 
+    justify-content: space-between;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5vh 1vh; 
+    width: 100%; 
+    height: 100%; 
+    overflow:hidden;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    opacity: 0.5;
+  }
+  
+  .icon-wrapper.active {
+    background-color: white; 
+    opacity: 1;
+  }
+  
+  .icon-wrapper.active mat-icon {
+    color: black;
+  }

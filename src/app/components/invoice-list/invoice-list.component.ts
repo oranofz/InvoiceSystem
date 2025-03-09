@@ -25,7 +25,6 @@ export class InvoiceListComponent {
 
   ngOnInit(): void {
     this.invoiceService.getInvoiceList().subscribe((data) => {
-      debugger;
       this.invoiceItems = data;
       this.filteredInvoiceItems = data;
       this.invoiceService.setInvoiceList(data);
@@ -46,7 +45,6 @@ export class InvoiceListComponent {
 
   applySearchFilter(filter: InvoiceFilter): void {
     this.filteredInvoiceItems = this.invoiceItems.filter(invoice => {
-      debugger;
       let invoiceDate = new Date(invoice.date);
       const dateMatches =
         (!filter.dateRangeStart || invoiceDate >= filter.dateRangeStart) &&

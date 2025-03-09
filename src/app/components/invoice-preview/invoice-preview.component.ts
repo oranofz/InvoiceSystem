@@ -20,6 +20,8 @@ export class InvoicePreviewComponent {
     console.log(this.invoiceItem.url);
   }
   goToPage(page: number) {
-    this.currentPage = page + 1; 
+    if (this.invoiceItem && this.invoiceItem.pages && this.invoiceItem.pages.length > 0) {
+      this.currentPage = page + 1; 
+    }
   }
 }
